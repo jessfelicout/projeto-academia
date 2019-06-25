@@ -1,0 +1,47 @@
+Procedimento para redirecionar páginas
+
+criar as pastas em src/app
+Exemplo:
+Home / serviços
+
+Ir de Home --> Quem somos
+
+1) no terminal, criar um serviço
+ng g s Quemsomos/quemsomos
+na pasta "Quemsomos surgirá um um arquivo quemsomos.service
+
+Em app.module --> providers colocar o QuemSomosService (por ex)
+e importar 
+
+No arquivo quemsomos.component.ts:
+
+1. Importar QuemSomosService
+
+2. na classe QuemSomosComponent colocar o construtor:
+
+constructor (private nomedavariavel): QuemSomosService{}
+
+3.no ngOnInit criar:
+
+ngOnInit(){
+	
+	this.Quemsomos = this.quemsomosService.getlista()
+
+}
+
+No arquivo quemsomos.service.ts:
+
+1.na classe QuemSomosService 
+
+criar objets: 
+
+getClientes(){
+
+	return [{id = 1, nome: 'Cliente 1'}, 
+		{id = 2, nome: 'Cliente 2'}]
+}
+
+constructor ()
+
+
+
