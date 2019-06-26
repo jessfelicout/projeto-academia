@@ -1,24 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {AppRoutingModule} from './app-routing.module';
-import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import { StoreComponent } from './store/store.component';
-import {ClientesComponent} from './clientes/clientes.component';
+
+import { AppComponent } from './app.component';
+import {Routing} from './app.routing';
+import { HomeComponent } from './home/home.component';
+import {CursosComponent} from './cursos/cursos.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoreComponent,
-    ClientesComponent
+    HomeComponent,
+    CursosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule,
+    Routing,
     NgbModule.forRoot()
   ],
   providers: [],
