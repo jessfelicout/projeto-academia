@@ -1,19 +1,19 @@
 <!-------Barra de opções (aparecerá em todas as páginas) ---->
 <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: lightseagreen">
-  <a routerLink= "" class="navbar-brand" href="#">Repositório de Cursos</a>
+  <a [routerLink]= "['']" class="navbar-brand" href="#">Repositório de Cursos</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a routerLink= "/home" class="nav-link" href="#"> <b>Home</b> <span class="sr-only">(current)</span></a>
+          <a [routerLink]= "['/home']" class="nav-link" [routerLinkActive]="['active']" href="#"> <b>Home</b> <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a routerLink="/login" class="nav-link" href="#"><b>Login</b></a>
+          <a [routerLink]="['/login']" class="nav-link" href="#"><b>Login</b></a>
         </li>
         <li class="nav-item">
-            <a routerLink="/cursos" class="nav-link" href="#"><b>Cursos</b></a>
+            <a [routerLink]="['/cursos']" class="nav-link" href="#"><b>Cursos</b></a>
         </li>
       </ul>
   </div>

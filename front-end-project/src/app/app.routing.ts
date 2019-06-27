@@ -9,11 +9,10 @@ const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path:'cursos', component: CursosComponent}
+    {path:'cursos', component: CursosComponent},
     //{ path: 'store', loadChildren: './store/store.module#StoreModule' },
-    //{ path: '**', redirectTo: 'store' }
-    // { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
-    // { path: '**', redirectTo: 'not-found' }
+    { path: '**', loadChildren: 'notfound/notfound.module#NotFoundModule'}
+    // { path: '**', component: 'not-found' }
 ];
 
 
