@@ -1,13 +1,59 @@
 
-<div class="container mx-auto mt-5 max-width-800px;">
+<!--mx-auto mt-5 -->
+<div class="container bg-white shadow-sm p-5 mt-4">
     <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Encontre um curso</a>
+    <a class="navbar-brand">Buscar um curso</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Curso" aria-label="Buscar Curso">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>      
+        </form>
     </nav>
 </div>
 
+
+<div class="container bg-white shadow-sm p-5 mt-4">
+    <table class="table table-products">
+      <thead class="shadow-sm thead-light">
+          <tr>
+            <th scope="col">Curso</th>
+            <th scope="col">Downloads</th>
+            <th scope="col">Avaliação</th>
+            <th scope="col">Add a "Meus cursos"</th>
+          </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor = "let curso of base">
+            <td>{{curso.nome}}</td>
+            <td>{{curso.downloads}}</td>
+            <td>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star-half-o"></span>
+            </td>
+            <td scope="row">
+              <input type="checkbox">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+<!--
+<div class="mx-auto mt-5" style="width: 800px;">
+  <label>Nossos Cursos</label>
+  <ul class="list-group">
+    <li class="list-group-item">Python Completo</li>
+    <li class="list-group-item">Machine Learning with Python</li>
+    <li class="list-group-item">Java Completo</li>
+    <li class="list-group-item">Desenvolvimento web completo</li>
+    <li class="list-group-item">Git e Github</li>
+    <li class="list-group-item">Metodologias Ágeis</li>
+    <li class="list-group-item">Desenvolvendo uma aplicação mobile em 30 minutos</li>
+
+  </ul>
+</div>
+
+-->
 
 

@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import {Routing} from './app.routing';
 import { HomeComponent } from './home/home.component';
 import {CursosComponent} from './cursos/cursos.component';
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './login/login.component';
+//import {NotFoundModule} from './notfound/notfound.module'
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     CommonModule,
+    //NotFoundModule,
     Routing,
     NgbModule.forRoot()
   ],

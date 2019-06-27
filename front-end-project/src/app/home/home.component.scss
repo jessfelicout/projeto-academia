@@ -1,2 +1,18 @@
 @import './node_modules/bootstrap/scss/bootstrap.scss';
 
+.icon-sm {
+    font-size: 1.6rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .action-icon {
+    color: #98a6ad;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 0 3px;
+  }
+
+  .action-icon:hover {
+    color: #6c757d;
+  }

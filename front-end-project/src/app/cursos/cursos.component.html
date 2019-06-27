@@ -1,34 +1,22 @@
-<app-home></app-home>
-
-<div class="mx-auto mt-5" style="width: 800px;">
-  <label>Seus Cursos</label>
-  <ul class="list-group">
-    <li class="list-group-item">Python</li>
-    <li class="list-group-item">Java Completo</li>
-    <li class="list-group-item">Desenvolvimento web</li>
-    <li class="list-group-item">Git e Github</li>
-  </ul>
+<div class="mx-auto mt-5" style="width: 900px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Curso</th>
+        <th>Progresso (%)</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let curso of cursos">
+        <td scope="row">{{curso.id}}</td>
+        <td>{{curso.nome}}</td>
+        <td>{{curso.desempenho}}</td>
+        <td> <a href="javascript:void(0);" class="action-icon"> <i class="fa fa-trash"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<!--
-<table class="table">
-  <thead>
-    <tr>
-      <th>Curso</th>
-      <th>Número de acessos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor = "let curso of cursos">
-      <td scope="row">{{cursostable.id}}</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td scope="row"></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
--->
+
