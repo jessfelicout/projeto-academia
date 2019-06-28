@@ -2,39 +2,44 @@
 <!--mx-auto mt-5 -->
 <div class="container bg-white shadow-sm p-5 mt-4">
     <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Buscar um curso</a>
+    <a class="navbar-brand">Inserir um curso na base</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Curso" aria-label="Buscar Curso">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Inserir</button>
         </form>
     </nav>
 </div>
 
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between align-items-center mb-2">
+      <h2 class="font-weight-light mb-4">List of Products</h2>
+      <a class="btn btn-outline-primary">
+        Create
+        <span class="fa fa-plus"></span>
+      </a>
+    </div>
 
 <div class="container bg-white shadow-sm p-5 mt-4">
     <table class="table table-products">
       <thead class="shadow-sm thead-light">
           <tr>
+            <th scope="col">Id</th>
             <th scope="col">Curso</th>
-            <th scope="col">Downloads</th>
-            <th scope="col">Avaliação</th>
+            <th scope="col">Carga horária</th>
             <th scope="col">Add a "Meus cursos"</th>
+            <th scope="col">Remover da base</th>
           </tr>
       </thead>
         <tbody>
           <tr *ngFor = "let curso of base">
+            <td>{{curso.id}}</td>
             <td>{{curso.nome}}</td>
-            <td>{{curso.downloads}}</td>
-            <td>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star-half-o"></span>
-            </td>
+            <td>{{curso.ch}}</td>
             <td scope="row">
               <input type="checkbox">
             </td>
+            <button class="btn btn-outline-dark action-icon" (click)="removeBase(curso.nome)">
+              <span class="fa fa-trash"></span>
           </tr>
         </tbody>
       </table>
@@ -53,6 +58,12 @@
 
   </ul>
 </div>
+
+<span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star-half-o"></span>
 
 -->
 
