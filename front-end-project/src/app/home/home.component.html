@@ -1,16 +1,18 @@
 
 <!--mx-auto mt-5 -->
-<div class="container bg-white shadow-sm p-5 mt-4">
+<div class="container shadow-sm p-5 mt-4" style="background-color: lightcoral">
     <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand">Buscar um curso</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Curso" aria-label="Buscar Curso">
+        <form #form = "ngForm" (ngSubmit)= "addCurso(form)"  novalidate>
+            <input type="text" class="form-control mr-sm-2" name ="curso" ngModel placeholder="Buscar Curso" aria-label="Buscar Curso">
+            <input type="text" name ="id" ngModel placeholder="Curso id" aria-label=" Curso id">
+            <!--*ngIf="expression"-->
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </nav>
 </div>
 
-
+<!--
 <div class="container bg-white shadow-sm p-5 mt-4">
     <table class="table table-products">
       <thead class="shadow-sm thead-light">
@@ -38,7 +40,7 @@
           </tr>
         </tbody>
       </table>
-  </div>
+  </div> -->
 <!--
 <div class="mx-auto mt-5" style="width: 800px;">
   <label>Nossos Cursos</label>
