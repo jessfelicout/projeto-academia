@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <!--criar curso-->
 <div class="container-fluid">
 
@@ -54,6 +55,50 @@
 
   </div> -->
 
+=======
+<!--mx-auto mt-5 -->
+<div class="container shadow-sm p-5 mt-4" style="background-color: lightcoral">
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Buscar um curso</a>
+        <form #form = "ngForm" (ngSubmit)= "addCurso(form)"  novalidate>
+            <input type="text" class="form-control mr-sm-2" name ="curso" ngModel placeholder="Buscar Curso" aria-label="Buscar Curso">
+            <input type="text" name ="id" ngModel placeholder="Curso id" aria-label=" Curso id">
+            <!--*ngIf="expression"-->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </nav>
+</div>
+
+<!--
+<div class="container bg-white shadow-sm p-5 mt-4">
+    <table class="table table-products">
+      <thead class="shadow-sm thead-light">
+          <tr>
+            <th scope="col">Curso</th>
+            <th scope="col">Downloads</th>
+            <th scope="col">Avaliação</th>
+            <th scope="col">Add a "Meus cursos"</th>
+          </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor = "let curso of base">
+            <td>{{curso.nome}}</td>
+            <td>{{curso.downloads}}</td>
+            <td>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star"></span>
+              <span class="text-warning fa fa-star-half-o"></span>
+            </td>
+            <td scope="row">
+              <input type="checkbox">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div> -->
+>>>>>>> 9a02175f9251853c63cc4ff47223ae0afe29e5b0
 <!--
   <div class="container bg-white shadow-sm p-5 mt-4">
       <div class="col-md-12 mt-2">
