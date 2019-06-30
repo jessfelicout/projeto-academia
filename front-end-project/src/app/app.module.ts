@@ -6,10 +6,11 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {Routing} from './app.routing';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent } from './home/home.component';
 import {CursosComponent} from './cursos/cursos.component';
 import {LoginComponent} from './login/login.component';
-//import {NotFoundModule} from './notfound/notfound.module'
+import {CrudFormComponent} from './home/crud-form/crud-form.component';
+
 
 
 @NgModule({
@@ -17,13 +18,14 @@ import {LoginComponent} from './login/login.component';
     AppComponent,
     HomeComponent,
     CursosComponent,
-    LoginComponent
+    LoginComponent,
+    CrudFormComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    //NotFoundModule,
     Routing,
     NgbModule.forRoot()
   ],

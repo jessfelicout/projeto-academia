@@ -1,70 +1,111 @@
 
-<!--mx-auto mt-5 -->
-<div class="container bg-white shadow-sm p-5 mt-4">
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Inserir um curso na base</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Curso" aria-label="Buscar Curso">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Inserir</button>
-        </form>
-    </nav>
-</div>
+<!--criar curso-->
+<div class="container-fluid">
 
-  <div class="row">
-    <div class="col-md-12 d-flex justify-content-between align-items-center mb-2">
-      <h2 class="font-weight-light mb-4">List of Products</h2>
-      <a class="btn btn-outline-primary">
-        Create
-        <span class="fa fa-plus"></span>
-      </a>
+    <!-- START: Table Product -->
+    <div class="container p-5 mt-4" style="background-color: papayawhip">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-between align-items-center mb-2">
+          <h2 class="font-weight-light mb-4">Cursos da base</h2>
+          <a class="btn btn-outline" style= "background-color: orange" [routerLink]="['/home/new']">
+            Novo
+          </a>
+        </div>
+
+        <div class="col-md-12">
+          <table class="table table-products">
+            <thead class="shadow-sm thead-light">
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Carga Horária</th>
+                <th scope="col">Add a Meus Cursos</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let curso of cursos">
+                <td scope="row">
+                  {{ curso.id }}
+                </td>
+                <td>
+                  {{curso.curso}}
+                </td>
+                <td>{{curso.ch}}</td>
+                <td class="table-action">
+                  <button class="btn action-icon" (click)="addMeusCursos(curso)">
+                    <span class="fa fa-plus"></span>
+                  </button>
+                </td>
+                <td class="table-action">
+                  <a class="btn btn-outline-dark action-icon" [routerLink]="['/home/update']">
+                    <span class="fa fa-edit"></span>
+                  </a>
+                  <button class="btn btn-outline-dark action-icon" (click)="removeCurso(curso.id)">
+                    <span class="fa fa-trash"></span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <!-- </div>
+
+  </div> -->
+
+<!--
+  <div class="container bg-white shadow-sm p-5 mt-4">
+      <div class="col-md-12 mt-2">
+        <form  #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+          <div class="form-row">
+            <div class="col-4">
+              <input type="text" name="curso" [(ngModel)]="base.curso" class="form-control" placeholder="Nome do curso">
+            </div>
+            <div class="col-md-1">
+              <input type="number" name="id" [(ngModel)]="base.id" class="form-control" placeholder="Código">
+            </div>
+            <div class="col-md-2">
+              <input type="number" name="ch" [(ngModel)]="base.ch" class="form-control" placeholder="Carga Horária">
+            </div>
+            <div class="col">
+              <button class="btn btn-primary" (click)="addCurso(base)">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
+<!-
+
 <div class="container bg-white shadow-sm p-5 mt-4">
-    <table class="table table-products">
-      <thead class="shadow-sm thead-light">
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Curso</th>
-            <th scope="col">Carga horária</th>
-            <th scope="col">Add a "Meus cursos"</th>
-            <th scope="col">Remover da base</th>
-          </tr>
-      </thead>
-        <tbody>
-          <tr *ngFor = "let curso of base">
-            <td>{{curso.id}}</td>
-            <td>{{curso.nome}}</td>
-            <td>{{curso.ch}}</td>
-            <td scope="row">
-              <input type="checkbox">
-            </td>
-            <button class="btn btn-outline-dark action-icon" (click)="removeBase(curso.nome)">
-              <span class="fa fa-trash"></span>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-<!--
-<div class="mx-auto mt-5" style="width: 800px;">
-  <label>Nossos Cursos</label>
-  <ul class="list-group">
-    <li class="list-group-item">Python Completo</li>
-    <li class="list-group-item">Machine Learning with Python</li>
-    <li class="list-group-item">Java Completo</li>
-    <li class="list-group-item">Desenvolvimento web completo</li>
-    <li class="list-group-item">Git e Github</li>
-    <li class="list-group-item">Metodologias Ágeis</li>
-    <li class="list-group-item">Desenvolvendo uma aplicação mobile em 30 minutos</li>
-
-  </ul>
-</div>
-
-<span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star"></span>
-              <span class="text-warning fa fa-star-half-o"></span>
-
--->
-
+  <div class="row">
+    <div class="col-md-12"></div>
+        <div class="col-md-12">
+          <table class="table table-products">
+            <thead class="shadow-sm thead-light">
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Carga Horária</th>
+                <th scope="col">Add a "meus cursos"</th>
+                <th scope="col">Remover da base</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let curso of base">
+                <td scope="row">{{curso.id}}</td>
+                <td>{{curso.nome}}</td>
+                <td>{{curso.ch}}</td>
+                 <td scope="row">
+                  <input type="checkbox">
+                </td>
+                <td> <a href="javascript:void(0);" class="action-icon"> <i class="fa fa-trash"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+     END: Table Product -->
 

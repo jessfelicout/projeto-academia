@@ -1,3 +1,8 @@
+<div class="container mt-5">
+    <a class="btn btn-outline" style= "background-color: orange" (click)="addCurso(curso)"><span class="fa fa-plus"></span>
+  Meus cursos</a>
+</div>
+
 <div class="mx-auto mt-5" style="width: 900px;">
   <table class="table">
     <thead>
@@ -12,8 +17,8 @@
       <tr *ngFor = "let curso of cursos">
         <td scope="row">{{curso.id}}</td>
         <td>{{curso.nome}}</td>
-        <td>{{curso.desempenho}}</td>
-        <td> <a href="javascript:void(0);" class="action-icon"> <i class="fa fa-trash"></i></a></td>
+        <td>{{curso.desempenho | percent}}</td>
+        <td> <a href="javascript:void(0);" class="action-icon" (click)="removeCurso(curso.id)"> <i class="fa fa-trash"></i></a></td>
       </tr>
     </tbody>
   </table>
